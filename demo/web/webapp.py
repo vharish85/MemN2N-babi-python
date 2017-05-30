@@ -59,9 +59,9 @@ def get_story():
 
 @app.route('/get/answer', methods=['GET'])
 def get_answer():
-    question_idx  = int(flask.request.args.get('question_idx'))
+    question_idx  = flask.request.args.get('question_idx')
     user_question = flask.request.args.get('user_question', '')
-
+    question_idx = int(question_idx)
     story_idx         = test_questions[0, question_idx]
     last_sentence_idx = test_questions[1, question_idx]
 
